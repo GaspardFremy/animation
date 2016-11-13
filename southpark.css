@@ -2,51 +2,85 @@
     margin: 0;
     padding: 0;
 }
+ @font-face {
+    font-family:'Southpark';
+    src: url(southpark.ttf);
+}
+
 
 html{
     background: black;
     overflow-x: hidden;
 }
-
 header{
     background: url("Bus-stop.jpg") repeat-x;
     background-size: 100% 500px;
-    -webkit-animation: move-city 10s infinite linear;
     height: 450px;
     position: relative;
+    border-top: solid 5px #9c6b56;
+    border-bottom: solid 5px #9c6b56;
+    border-radius: 20px;
+    -webkit-animation: move-city
+        7s linear infinite;
 }
-
-
 #eric{
     position: absolute;
+    margin-top: -500px;
     width: 100px;
     height: 100px;
     -webkit-animation: 
-      run-run-run
-      15s linear infinite;
-
+        place-eric 1s 1,
+        run-run-run 8s linear 1s 1;
 }
-
 #kenny{
     width: 200px;
-    -webkit-animation: 
-      run-run-run
-    10s linear infinite;
     position: absolute;
+    margin-top: -500px;
+    -webkit-animation: 
+        place-kenny 9.5s 1;
+}
+#kenny1 {
+    width: 80px;
+    position: absolute;
+    margin-top: -400px;
+    -webkit-animation:
+        fly-kenny 8s linear 10s infinite;
+}
+#end{
+    margin: center;
+    width: 500px;
+    margin-top: 250px;
+    margin-left: 380px;
+    position: absolute;
+    -webkit-animation: end-animation
+        12s 1;
+}
+header h1 {
+    color: #9c6b56;
+    font-size: 70px;
+    font-family: 'Southpark';
+    padding-top: 60px;
+    text-align: center;
+    -webkit-animation: text-appear
+        12s  1;
+}
+#logo {
+    width: 100px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 120px;
 }
 
-/* 
-    Animation Definitions
-*/
+
+/*  Animation List */
 
 @-webkit-keyframes move-city{
-    	from { background-position: 0 -50px; }
-	to   { background-position: -533px -50px; }
+    from { background-position: 0 -50px; }
+	to   { background-position: -800px -50px; }
 }
 
 @-webkit-keyframes run-run-run{
-    0%  {  bottom: 40px;  left: 100%; }
-	10% { bottom: 40px; left: 90%;   }
+    0%  {  bottom: 40px;  left: 90%; }
 	20% { bottom: 40px; left: 80%;   }
 	30% { bottom: 40px; left: 70%;   }
 	40% { bottom: 40px; left: 60%;   }
@@ -54,7 +88,74 @@ header{
 	60% { bottom: 40px; left: 40%;   }
 	70% { bottom: 40px; left: 30%;   }
 	80% { bottom: 40px; left: 20%;   }
-	90% { bottom: 40px; left: 10%;   }
-	100% { bottom: 40px; left: -10%; }
+	90% { bottom: 40px; left: 10%;    }
+    100% {bottom: 40px; left: -10%; }
 }
 
+
+@-webkit-keyframes place-kenny {
+    0% {opacity: 1;  bottom: 35px; left: 50px}
+    10% {opacity: 1;  bottom: 35px; left: 50px}
+    20% {opacity: 1;  bottom: 35px; left: 50px}
+    30% {opacity: 1;  bottom: 35px; left: 50px}
+    40% {opacity: 1;  bottom: 35px; left: 50px}
+    50% {opacity: 1;  bottom: 35px; left: 50px}
+    60% {opacity: 1;  bottom: 35px; left: 50px}
+    70% {opacity: 1;  bottom: 35px; left: 50px}
+    80% {opacity: 1;  bottom: 35px; left: 50px}
+    90% {opacity: 1;  bottom: 35px; left: 50px}
+    100% {opacity: 0; bottom: 35px; left: 50px}
+}
+
+@-webkit-keyframes place-eric {
+    from { bottom: 40px; right: 50px}
+    to {bottom: 40px; right: 55px}
+}
+
+
+@-webkit-keyframes text-appear {
+    0% {opacity: 0; top: 100px; left: 350px;}
+    10% {opacity: 0; top: 100px; left: 350px;}
+    20% {opacity: 0; top: 100px; left: 350px; }
+    30% {opacity: 0; top: 100px; left: 350px;}
+    40% {opacity: 0; top: 100px; left: 350px;}
+    50% {opacity: 0; top: 100px; left: 350px;}
+    60% {opacity: 0; top: 100px; left: 350px;}
+    70% {opacity: 0; top: 100px; left: 350px;}
+    80% {opacity: 0; top: 100px; left: 350px;}
+    90% {opacity: 0.75; top: 100px; left: 350px;}
+    100% {opacity: 1; top: 100px; left: 350px}
+}
+
+@-webkit-keyframes end-animation {
+     0% {opacity: 0;}
+    10% {opacity: 0;}
+    20% {opacity: 0;}
+    30% {opacity: 0;}
+    40% {opacity: 0;}
+    50% {opacity: 0;}
+    60% {opacity: 0;}
+    70% {opacity: 0;}
+    80% {opacity: 0;}
+    90% {opacity: 0.75;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes fly-kenny{
+    0%  { opacity: 0.65; top: 510px; left: 100%; }
+	10% { opacity: 0.65; top: 520px; left: 90%;   }
+	20% { opacity: 0.65; top: 510px; left: 80%;   }
+	30% { opacity: 0.65; top: 520px; left: 70%;   }
+	40% { opacity: 0.65; top: 510px; left: 60%;   }
+	50% { opacity: 0.65; top: 520px; left: 50%;   }
+	60% { opacity: 0.65; top: 510px; left: 40%;   }
+	70% { opacity: 0.65; top: 520px; left: 30%;   }
+	80% { opacity: 0.65; top: 510px; left: 20%;   }
+	90% { opacity: 0.65; top: 520px; left: 10%;   }
+	100% { opacity: 0.65; top: 510px; left: -10%; }
+}
+
+@-webkit-keyframes kenny-appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
